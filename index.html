@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binaural Audio Experience</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="appTitle">Binaural Experience</h1>
+        
+        <div id="supportWarning" class="warning" style="display:none;">
+            <span id="supportText">Seu navegador não suporta Web Audio API.</span>
+        </div>
+        
+        <div class="lang-switch">
+            <button id="langPT" aria-label="Português">🇧🇷</button>
+            <button id="langEN" aria-label="English">🇺🇸</button>
+        </div>
+        
+        <div id="tutorial" class="tutorial">
+            <span id="tutorialText">
+                O áudio binaural utiliza frequências diferentes em cada ouvido para criar efeitos no cérebro. Use fones de ouvido para melhor experiência.
+            </span>
+        </div>
+        
+        <div class="presets">
+            <label for="presetSelect" id="presetLabel">Preset:</label>
+            <select id="presetSelect" aria-label="Escolher preset">
+                <option value="default">Padrão (16-40Hz)</option>
+                <option value="focus">Foco (12-20Hz)</option>
+                <option value="relax">Relaxamento (4-8Hz)</option>
+            </select>
+        </div>
+        
+        <div class="controls">
+            <button id="startBtn" aria-label="Iniciar sessão">Iniciar</button>
+            <button id="pauseResumeBtn" aria-label="Pausar sessão">Pausar</button>
+            <button id="stopBtn" aria-label="Parar sessão">Parar</button>
+            <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1" aria-label="Volume">
+            <label for="volumeControl" id="volumeLabel">Volume</label>
+        </div>
+        
+        <div class="progress-bar-container">
+            <span id="currentTime">00:00</span>
+            <input type="range" id="progressBar" min="0" max="1" step="0.001" value="0" aria-label="Barra de progresso">
+            <span id="totalTime">40:00</span>
+        </div>
+        
+        <div id="frequencyDisplay"></div>
+        <div id="binauralDiffDisplay"></div>
+        <canvas id="binauralChart" width="340" height="60" aria-label="Visualização da diferença binaural"></canvas>
+    </div>
+    <script src="scripts/app.js"></script>
+</body>
+</html>

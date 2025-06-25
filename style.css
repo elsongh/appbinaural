@@ -1,0 +1,195 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f0f4f8 100%);
+    color: #222;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(60, 120, 200, 0.15);
+    padding: 36px 32px 28px 32px;
+    max-width: 550px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 2.2em;
+    color: #2563eb;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.warning {
+    background: #fee2e2;
+    color: #b91c1c;
+    border-radius: 8px;
+    padding: 8px 12px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.tutorial {
+    background: #f1f5fd;
+    color: #2563eb;
+    border-radius: 8px;
+    padding: 8px 12px;
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 8px;
+}
+
+.lang-switch {
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.lang-switch button {
+    background: none;
+    border: none;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: transform 0.15s;
+}
+.lang-switch button:focus, .lang-switch button:hover {
+    transform: scale(1.2);
+}
+
+.presets {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}
+
+#presetSelect {
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 1em;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    color: #222;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+}
+
+button {
+    background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 1.05em;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    outline: none;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+button:hover, button:focus {
+    background: linear-gradient(90deg, #1d4ed8 0%, #3b82f6 100%);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+input[type="range"] {
+    accent-color: #2563eb;
+    width: 110px;
+    height: 4px;
+    background: transparent;
+    margin: 0 8px;
+}
+
+input[type="range"]#progressBar {
+    width: 170px;
+    accent-color: #60a5fa;
+}
+
+label {
+    font-size: 1em;
+    color: #555;
+    margin-left: 4px;
+}
+
+.progress-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin: 0 0 8px 0;
+}
+
+#currentTime, #totalTime {
+    font-family: 'Fira Mono', 'Consolas', monospace;
+    font-size: 1.05em;
+    color: #2563eb;
+    min-width: 48px;
+    text-align: center;
+}
+
+#frequencyDisplay, #binauralDiffDisplay {
+    margin-top: 8px;
+    font-size: 1.08em;
+    text-align: center;
+    font-family: 'Fira Mono', 'Consolas', monospace;
+    color: #2563eb;
+    letter-spacing: 0.5px;
+    background: #f1f5fd;
+    border-radius: 6px;
+    padding: 6px 0;
+    box-shadow: 0 1px 4px rgba(37,99,235,0.04);
+}
+
+#binauralChart {
+    margin: 10px auto 0 auto;
+    display: block;
+    background: #f8fafc;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(37,99,235,0.04);
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 18px 6vw 18px 6vw;
+        max-width: 98vw;
+    }
+    input[type="range"]#progressBar {
+        width: 90px;
+    }
+    .controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .progress-bar-container {
+        gap: 6px;
+    }
+}
